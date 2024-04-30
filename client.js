@@ -76,7 +76,7 @@ function calculateIndividualEmployeeBonus(employee) {
 	  employeeBonus.bonusPercentage = 0;
   }
 
-  employeeBonus.totalBonus = employeeBonus.bonusPercentage * Number(employee.annualSalary);
+  employeeBonus.totalBonus = Math.round(employeeBonus.bonusPercentage * Number(employee.annualSalary));
   employeeBonus.totalCompensation = employeeBonus.totalBonus + Number(employee.annualSalary);
 return employeeBonus;
 }
