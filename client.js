@@ -63,6 +63,7 @@ function calculateIndividualEmployeeBonus(employee) {
 	} else {
 		employeeBonus.bonusPercentage = 0;
   }
+
 	if (employee.employeeNumber < 10000) {
 		employeeBonus.bonusPercentage += 0.05;
 	}
@@ -70,6 +71,7 @@ function calculateIndividualEmployeeBonus(employee) {
   if (employee.annualSalary > 65000) {
 		employeeBonus.bonusPercentage -= 0.01;
 	}
+  
 	if (employeeBonus.bonusPercentage > 0.13) {
 		employeeBonus.bonusPercentage = 0.13;
 	} else if (employeeBonus.bonusPercentage < 0) {
@@ -80,6 +82,7 @@ function calculateIndividualEmployeeBonus(employee) {
   employeeBonus.totalCompensation = employeeBonus.totalBonus + Number(employee.annualSalary);
 return employeeBonus;
 }
+
 for (let emp of employees) {
 	console.log(calculateIndividualEmployeeBonus(emp));
 }
